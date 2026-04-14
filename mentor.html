@@ -1075,6 +1075,29 @@
       .footer-top { grid-template-columns: 1fr; gap: 1.8rem; }
       header { padding: 0.8rem 1.2rem; }
       nav { display: none; }
+      /* Improve image sizing and card spacing on smaller screens */
+      .service-card-img { height: 120px; object-fit: cover; }
+      .feature-card, .service-card, .process-step, .testimonial-card { padding: 1.2rem; }
+      .hero { min-height: 60vh; padding: 5rem 1rem 3rem; }
+      .hero-sub { font-size: 1rem; }
+      .section-title { font-size: 1.8rem; }
+    }
+
+    @media (max-width: 420px) {
+      /* Tighter layout for very small devices */
+      .hero { min-height: 55vh; padding: 4rem 0.8rem 2.5rem; }
+      .hero h1 { font-size: 2rem; line-height: 1.05; }
+      .hero-sub { font-size: 0.95rem; }
+      .service-card-img { height: 100px; }
+      .section { padding: 3rem 0.8rem; }
+      .section-title { font-size: 1.6rem; }
+      header { padding: 0.6rem 0.8rem; }
+      .logo-text { font-size: 1rem; }
+      .features-grid, .services-grid { gap: 1rem; }
+      /* Ensure images don't overflow */
+      .service-card-img, .internship-img, .about-img-wrap img, .t-avatar, .ceo-photo { max-width: 100%; height: auto; }
+      /* Reduce large shadows and spacing to keep content visible */
+      .shadow-lg, .shadow-md { box-shadow: none !important; }
     }
   </style>
 </head>
