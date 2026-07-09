@@ -11,6 +11,7 @@ const { apiLimiter } = require('./middlewares/rateLimiter');
 // Import routes
 const internshipRoutes = require('./routes/internshipRoutes');
 const adminRoutes = require('./routes/adminRoutes');
+const contactRoutes = require('./routes/contactRoutes');
 
 // Initialize database
 connectDB().then(() => {
@@ -45,6 +46,7 @@ app.use('/api', apiLimiter);
 // Register Routes
 app.use('/api/internships', internshipRoutes);
 app.use('/api/admin', adminRoutes);
+app.use('/api/contact', contactRoutes);
 
 // Route for serving index.html on root
 app.get('/', (req, res) => {

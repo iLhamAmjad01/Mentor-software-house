@@ -68,8 +68,36 @@ const sendApplicantConfirmation = async (email, fullName) => {
   return transporter.sendMail(mailOptions);
 };
 
+/**
+ * Sends a direct contact message inquiry to HR/Admin.
+ */
+const sendContactNotification = async (contactMessage) => {
+  const hrEmail = process.env.HR_EMAIL || 'softwarehousementor@gmail.com';
+  
+  const formattedTime = new Date(contactMessage.createdAt).toLocaleString('en-US', {
+    timeZone: 'Asia/Karachi',
+    dateStyle: 'medium',
+    timeStyle: 'short',
+  });
+  
+  const templatePath = path.join(__dirname, '../templates/contactNotification.js');
+  const getTemplate = require(templatePath);
+  const htmlContent = getTemplate(contactMessage, formattedTime);
+
+  const mailOptions = {
+    from: `"MentorTech Contact" <${process.env.SMTP_USER}>`,
+    to: hrEmail,
+    replyTo: contactMessage.email,
+    subject: `Contact Form: ${contactMessage.subject}`,
+    html: htmlContent,
+  };
+
+  return transporter.sendMail(mailOptions);
+};
+
 module.exports = {
   transporter,
   sendAdminNotification,
   sendApplicantConfirmation,
+  sendContactNotification,
 };

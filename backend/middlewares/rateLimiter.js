@@ -36,8 +36,21 @@ const loginLimiter = rateLimit({
   },
 });
 
+// Contact message rate limiter (Strict: 5 messages per hour per IP)
+const contactLimiter = rateLimit({
+  windowMs: 60 * 60 * 1000, // 1 hour
+  max: 5, // Limit each IP to 5 messages per hour
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: {
+    success: false,
+    message: 'Too many messages sent from this IP. Please try again in an hour.',
+  },
+});
+
 module.exports = {
   apiLimiter,
   applyLimiter,
   loginLimiter,
+  contactLimiter,
 };

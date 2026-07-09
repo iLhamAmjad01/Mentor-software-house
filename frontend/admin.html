@@ -1487,15 +1487,15 @@
           
           // Social links
           const linkedin = document.getElementById('det-linkedin');
-          if (app.linkedin) { linkedin.textContent = app.linkedin; linkedin.href = app.linkedin; linkedin.style.display = 'inline'; }
+          if (app.linkedin) { linkedin.textContent = app.linkedin; linkedin.href = sanitizeUrl(app.linkedin); linkedin.style.display = 'inline'; }
           else { linkedin.textContent = 'Not Provided'; linkedin.removeAttribute('href'); }
 
           const github = document.getElementById('det-github');
-          if (app.github) { github.textContent = app.github; github.href = app.github; github.style.display = 'inline'; }
+          if (app.github) { github.textContent = app.github; github.href = sanitizeUrl(app.github); github.style.display = 'inline'; }
           else { github.textContent = 'Not Provided'; github.removeAttribute('href'); }
 
           const portfolio = document.getElementById('det-portfolio');
-          if (app.portfolio) { portfolio.textContent = app.portfolio; portfolio.href = app.portfolio; portfolio.style.display = 'inline'; }
+          if (app.portfolio) { portfolio.textContent = app.portfolio; portfolio.href = sanitizeUrl(app.portfolio); portfolio.style.display = 'inline'; }
           else { portfolio.textContent = 'Not Provided'; portfolio.removeAttribute('href'); }
 
           // Long Text fields
@@ -1722,6 +1722,18 @@
       return str.replace(/[&<>'"]/g, 
         tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
       );
+    }
+
+    function sanitizeUrl(str) {
+      if (!str) return '#';
+      const trimmed = str.trim();
+      if (/^(javascript|data|vbscript):/i.test(trimmed)) {
+        return '#';
+      }
+      if (!/^https?:\/\//i.test(trimmed)) {
+        return 'https://' + trimmed;
+      }
+      return trimmed;
     }
 
     function escapeQuote(str) {
