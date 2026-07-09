@@ -1,0 +1,2879 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MentorTech | Software Development &amp; Internship Programs in Islamabad</title>
+  <meta name="description"
+    content="MentorTech is an Islamabad-based software house building modern websites, custom software and UI/UX for growing businesses — and mentoring the next generation of developers through hands-on internships." />
+  <meta name="keywords"
+    content="MentorTech, software house Islamabad, web development, custom software, UI UX design, internship program Pakistan" />
+  <meta name="author" content="MentorTech" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://mentortech.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="MentorTech" />
+  <meta property="og:title" content="MentorTech | Code. Learn. Grow." />
+  <meta property="og:description"
+    content="Modern web &amp; software development, UI/UX design, and hands-on internship programs — based in Islamabad, Pakistan." />
+  <meta property="og:image" content="logo.png" />
+  <meta property="og:url" content="https://mentortech.com/" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="MentorTech | Code. Learn. Grow." />
+  <meta name="twitter:description"
+    content="Modern web &amp; software development, UI/UX design, and hands-on internship programs — based in Islamabad, Pakistan." />
+  <meta name="twitter:image" content="logo.png" />
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="shortcut icon" type="image/png" href="logo.png" />
+  <link rel="apple-touch-icon" href="logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "MentorTech",
+    "url": "https://mentortech.com/",
+    "logo": "https://mentortech.com/logo.png",
+    "description": "MentorTech is a software house in Islamabad, Pakistan delivering web development, custom software, UI/UX design, and technical internships.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Office #12, 2nd Floor, Blue Area",
+      "addressLocality": "Islamabad",
+      "addressCountry": "PK"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "softwarehousementor@gmail.com",
+      "telephone": "+92-300-1234567",
+      "contactType": "customer service"
+    },
+    "sameAs": [
+      "https://facebook.com",
+      "https://linkedin.com",
+      "https://twitter.com"
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --teal: #609195;
+      --teal-dark: #3e6568;
+      --teal-deeper: #2a464a;
+      --teal-light: #a8c8cb;
+      --teal-pale: #ddeef0;
+      --teal-ultra-pale: #f0f8f9;
+      --cream: #faf8f4;
+      --white: #ffffff;
+      --dark: #1a2e30;
+      --text: #2c3e40;
+      --text-muted: #5a7275;
+      --accent: #e8a87c;
+      --accent-light: #f5d5bc;
+      --shadow-sm: 0 2px 12px rgba(96, 145, 149, 0.12);
+      --shadow-md: 0 8px 32px rgba(96, 145, 149, 0.18);
+      --shadow-lg: 0 20px 60px rgba(96, 145, 149, 0.22);
+      --radius: 1.5rem;
+      --radius-sm: 0.75rem;
+      --transition: 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 400;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ─── ACCESSIBILITY & UTILITY ─── */
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 1rem;
+      background: var(--teal-dark);
+      color: var(--white);
+      padding: 0.8rem 1.4rem;
+      border-radius: var(--radius-sm);
+      z-index: 1000;
+      font-weight: 600;
+      text-decoration: none;
+      transition: top var(--transition);
+    }
+
+    .skip-link:focus {
+      top: 1rem;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible,
+    [tabindex]:focus-visible {
+      outline: 2px solid var(--teal);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    /* Unified button focus / active states across all CTA variants */
+    .btn-primary:focus-visible,
+    .btn-outline:focus-visible,
+    .apply-btn:focus-visible,
+    .nav-btn:focus-visible {
+      outline: 2px solid var(--teal-light);
+      outline-offset: 3px;
+    }
+
+    .btn-primary:active,
+    .btn-outline:active,
+    .apply-btn:active {
+      transform: translateY(0) scale(0.98);
+    }
+
+    .nav-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      border: 1.5px solid rgba(96, 145, 149, 0.3);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      flex-direction: column;
+      gap: 5px;
+      transition: all var(--transition);
+    }
+
+    .nav-toggle:hover {
+      background: var(--teal-pale);
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: var(--teal-dark);
+      border-radius: 2px;
+      transition: all var(--transition);
+    }
+
+    .nav-toggle.open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .nav-toggle.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .nav-toggle.open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* ─── HEADER ─── */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 1rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(250, 248, 244, 0.88);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(96, 145, 149, 0.12);
+      transition: box-shadow var(--transition);
+    }
+
+    header.scrolled {
+      box-shadow: var(--shadow-md);
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      text-decoration: none;
+    }
+
+    .logo-img {
+      height: 44px;
+      width: 44px;
+      object-fit: contain;
+      border-radius: 12px;
+      border: 2px solid var(--teal-light);
+      background: var(--white);
+    }
+
+    .logo-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--teal-dark);
+      letter-spacing: 0.5px;
+    }
+
+    .logo-text span {
+      color: var(--teal);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 0.3rem;
+      align-items: center;
+    }
+
+    .nav-btn {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 500;
+      padding: 0.55rem 1.2rem;
+      border-radius: 2rem;
+      transition: all var(--transition);
+      letter-spacing: 0.3px;
+    }
+
+    .nav-btn:hover {
+      background: var(--teal-pale);
+      color: var(--teal-dark);
+    }
+
+    .nav-btn.cta {
+      background: var(--teal);
+      color: var(--white);
+      font-weight: 600;
+    }
+
+    .nav-btn.cta:hover {
+      background: var(--teal-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(96, 145, 149, 0.35);
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      position: relative;
+      overflow: hidden;
+      background: var(--dark);
+      padding: 8rem 2rem 5rem;
+    }
+
+    .hero-backdrop {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 20% 50%, rgba(96, 145, 149, 0.35) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 80% at 80% 30%, rgba(62, 101, 104, 0.25) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 40% at 60% 80%, rgba(232, 168, 124, 0.12) 0%, transparent 50%);
+    }
+
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(96, 145, 149, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(96, 145, 149, 0.06) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 900px;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: rgba(96, 145, 149, 0.15);
+      border: 1px solid rgba(96, 145, 149, 0.3);
+      color: var(--teal-light);
+      font-family: 'Space Mono', monospace;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 0.5rem 1.2rem;
+      border-radius: 2rem;
+      margin-bottom: 2rem;
+      animation: fadeUp 0.8s ease both;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--teal-light);
+      border-radius: 50%;
+      animation: pulse 2s ease infinite;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      font-weight: 900;
+      line-height: 1.05;
+      color: var(--white);
+      letter-spacing: -1px;
+      margin-bottom: 1.5rem;
+      animation: fadeUp 0.8s 0.15s ease both;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--teal-light);
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      color: rgba(255, 255, 255, 0.65);
+      max-width: 580px;
+      margin: 0 auto 2.5rem;
+      font-weight: 300;
+      animation: fadeUp 0.8s 0.3s ease both;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeUp 0.8s 0.45s ease both;
+    }
+
+    .btn-primary {
+      background: var(--teal);
+      color: var(--white);
+      border: none;
+      border-radius: 2rem;
+      padding: 1rem 2.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      font-family: 'DM Sans', sans-serif;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all var(--transition);
+      letter-spacing: 0.3px;
+      box-shadow: 0 4px 20px rgba(96, 145, 149, 0.4);
+    }
+
+    .btn-primary:hover {
+      background: var(--teal-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(96, 145, 149, 0.5);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 1.5px solid rgba(255, 255, 255, 0.3);
+      border-radius: 2rem;
+      padding: 1rem 2.5rem;
+      font-size: 1rem;
+      font-weight: 500;
+      font-family: 'DM Sans', sans-serif;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all var(--transition);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.6);
+      transform: translateY(-2px);
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(255, 255, 255, 0.35);
+      font-size: 0.75rem;
+      font-family: 'Space Mono', monospace;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      animation: fadeUp 1s 0.9s ease both;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), transparent);
+      animation: scrollLine 1.5s ease-in-out infinite;
+    }
+
+    /* ─── SECTION BASE ─── */
+    .section {
+      padding: 6rem 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 1.2rem;
+    }
+
+    .section-label::before {
+      content: '';
+      width: 24px;
+      height: 2px;
+      background: var(--teal);
+      border-radius: 2px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      color: var(--dark);
+      line-height: 1.15;
+      letter-spacing: -0.5px;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-title em {
+      font-style: italic;
+      color: var(--teal);
+    }
+
+    /* ─── FEATURES ─── */
+    #features {
+      background: var(--white);
+      padding: 6rem 2rem;
+    }
+
+    #features .inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+    }
+
+    .feature-card {
+      background: var(--cream);
+      border: 1px solid rgba(96, 145, 149, 0.12);
+      border-radius: var(--radius);
+      padding: 2rem 1.8rem;
+      transition: all var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--teal), var(--teal-light));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--transition);
+    }
+
+    .feature-card:hover {
+      background: var(--white);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-4px);
+      border-color: var(--teal-light);
+    }
+
+    .feature-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .feature-icon {
+      font-size: 2rem;
+      margin-bottom: 1.2rem;
+      display: block;
+    }
+
+    .feature-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 0.7rem;
+    }
+
+    .feature-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+
+    /* ─── ABOUT ─── */
+    #about {
+      background: var(--teal-ultra-pale);
+      padding: 6rem 2rem;
+    }
+
+    #about .inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+      margin-top: 3.5rem;
+    }
+
+    .about-img-wrap {
+      position: relative;
+    }
+
+    .about-img-wrap img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .about-img-badge {
+      position: absolute;
+      bottom: -1.5rem;
+      right: -1.5rem;
+      background: var(--teal);
+      color: var(--white);
+      border-radius: var(--radius-sm);
+      padding: 1.2rem 1.5rem;
+      box-shadow: var(--shadow-md);
+      font-family: 'Playfair Display', serif;
+    }
+
+    .about-img-badge .num {
+      font-size: 2.2rem;
+      font-weight: 900;
+      line-height: 1;
+      display: block;
+    }
+
+    .about-img-badge .lbl {
+      font-size: 0.78rem;
+      opacity: 0.85;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+    }
+
+    .about-text p {
+      color: var(--text-muted);
+      margin-bottom: 1.2rem;
+      line-height: 1.8;
+    }
+
+    .ceo-strip {
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+      background: var(--white);
+      border: 1px solid var(--teal-light);
+      border-radius: var(--radius-sm);
+      padding: 0.9rem 1.3rem;
+      margin-top: 1.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .ceo-strip .avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--teal-pale);
+      border: 2px solid var(--teal-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+    }
+
+    .ceo-strip .info strong {
+      display: block;
+      font-weight: 600;
+      color: var(--dark);
+      font-size: 0.95rem;
+    }
+
+    .ceo-strip .info span {
+      font-size: 0.8rem;
+      color: var(--teal);
+      font-family: 'Space Mono', monospace;
+    }
+
+    /* ─── SERVICES ─── */
+    #services {
+      background: var(--white);
+      padding: 6rem 2rem;
+    }
+
+    #services .inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+    }
+
+    .service-card {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid rgba(96, 145, 149, 0.1);
+      background: var(--cream);
+      transition: all var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-5px);
+      border-color: var(--teal-light);
+    }
+
+    .service-card-img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .service-card-body {
+      padding: 1.5rem;
+      flex: 1;
+    }
+
+    .service-card-body h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 0.6rem;
+    }
+
+    .service-card-body p {
+      color: var(--text-muted);
+      font-size: 0.93rem;
+      line-height: 1.65;
+    }
+
+    /* ─── PROCESS ─── */
+    #process {
+      background: var(--dark);
+      padding: 6rem 2rem;
+    }
+
+    #process .inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    #process .section-title {
+      color: var(--white);
+    }
+
+    #process .section-label {
+      color: var(--teal-light);
+    }
+
+    #process .section-label::before {
+      background: var(--teal-light);
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+      position: relative;
+    }
+
+    .process-step {
+      background: rgba(96, 145, 149, 0.08);
+      border: 1px solid rgba(96, 145, 149, 0.2);
+      border-radius: var(--radius);
+      padding: 2rem 1.5rem;
+      transition: all var(--transition);
+      position: relative;
+    }
+
+    .process-step:hover {
+      background: rgba(96, 145, 149, 0.15);
+      border-color: var(--teal);
+      transform: translateY(-4px);
+    }
+
+    .step-num {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--teal-light);
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .process-step h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.7rem;
+    }
+
+    .process-step p {
+      color: rgba(255, 255, 255, 0.55);
+      font-size: 0.93rem;
+      line-height: 1.65;
+    }
+
+    .process-dot {
+      width: 40px;
+      height: 40px;
+      background: var(--teal);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 1.3rem;
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* ─── CEO MESSAGE ─── */
+    #ceo-message {
+      background: var(--teal-ultra-pale);
+      padding: 6rem 2rem;
+    }
+
+    #ceo-message .inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .ceo-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 320px 1fr;
+    }
+
+    .ceo-card-left {
+      background: linear-gradient(160deg, var(--teal-dark), var(--teal-deeper));
+      padding: 3rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .ceo-photo {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid rgba(255, 255, 255, 0.25);
+      margin-bottom: 1.5rem;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    }
+
+    .ceo-card-left h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.4rem;
+    }
+
+    .ceo-card-left p {
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.6);
+      font-family: 'Space Mono', monospace;
+      letter-spacing: 0.5px;
+    }
+
+    .ceo-quote-mark {
+      font-family: 'Playfair Display', serif;
+      font-size: 5rem;
+      color: rgba(255, 255, 255, 0.12);
+      line-height: 1;
+      margin-top: 1.5rem;
+      align-self: flex-start;
+    }
+
+    .ceo-card-right {
+      padding: 3rem 2.5rem;
+    }
+
+    .ceo-card-right p {
+      color: var(--text-muted);
+      line-height: 1.85;
+      margin-bottom: 1rem;
+      font-size: 0.98rem;
+    }
+
+    /* ─── INTERNSHIP ─── */
+    #internship {
+      background: var(--cream);
+      padding: 6rem 2rem;
+    }
+
+    #internship .inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .internship-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+      margin-top: 3.5rem;
+    }
+
+    .internship-img {
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-md);
+    }
+
+    .internship-skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin: 1.5rem 0;
+    }
+
+    .skill-chip {
+      background: var(--teal-pale);
+      color: var(--teal-dark);
+      border: 1px solid var(--teal-light);
+      border-radius: 2rem;
+      padding: 0.4rem 1rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      font-family: 'Space Mono', monospace;
+    }
+
+    .apply-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--teal);
+      color: var(--white);
+      border: none;
+      border-radius: 2rem;
+      padding: 1rem 2.2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      font-family: 'DM Sans', sans-serif;
+      cursor: pointer;
+      transition: all var(--transition);
+      box-shadow: 0 4px 18px rgba(96, 145, 149, 0.35);
+      letter-spacing: 0.3px;
+      margin-bottom: 1.5rem;
+    }
+
+    .apply-btn:hover {
+      background: var(--teal-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(96, 145, 149, 0.45);
+    }
+
+    .internship-form-inline {
+      background: var(--white);
+      border: 1px solid var(--teal-light);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      margin-top: 2rem;
+      display: none;
+      box-shadow: var(--shadow-lg);
+      backdrop-filter: blur(10px);
+    }
+
+    .form-steps-indicator {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2.5rem;
+      position: relative;
+    }
+
+    .step-indicator {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 2;
+      position: relative;
+      cursor: default;
+    }
+
+    .step-number {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--teal-pale);
+      color: var(--teal-dark);
+      border: 2px solid var(--teal-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      font-family: 'Space Mono', monospace;
+    }
+
+    .step-indicator.active .step-number {
+      background: var(--teal);
+      color: var(--white);
+      border-color: var(--teal);
+      box-shadow: 0 0 0 4px rgba(96, 145, 149, 0.25);
+    }
+
+    .step-indicator.completed .step-number {
+      background: var(--teal-dark);
+      color: var(--white);
+      border-color: var(--teal-dark);
+    }
+
+    .step-name {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 0.5rem;
+      color: var(--text-muted);
+      font-family: 'Space Mono', monospace;
+      transition: color 0.3s ease;
+    }
+
+    .step-indicator.active .step-name {
+      color: var(--teal-dark);
+    }
+
+    .step-line {
+      flex: 1;
+      height: 2px;
+      background: var(--teal-pale);
+      margin: 0 10px;
+      margin-top: -30px; /* aligns with step circles */
+      z-index: 1;
+      transition: background 0.3s ease;
+    }
+
+    .step-line.filled {
+      background: var(--teal);
+    }
+
+    .form-step-pane {
+      display: none;
+      animation: fadeInForm 0.4s ease forwards;
+    }
+
+    .form-step-pane.active {
+      display: block;
+    }
+
+    @keyframes fadeInForm {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .form-section-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.25rem;
+      color: var(--teal-dark);
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--teal-light);
+      padding-bottom: 0.5rem;
+    }
+
+    .form-row {
+      margin-bottom: 1.2rem;
+    }
+
+    .form-row label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--teal-dark);
+      margin-bottom: 0.4rem;
+      font-family: 'Space Mono', monospace;
+      letter-spacing: 0.3px;
+    }
+
+    .form-row input,
+    .form-row select,
+    .form-row textarea {
+      width: 100%;
+      border: 1.5px solid var(--teal-light);
+      border-radius: var(--radius-sm);
+      padding: 0.7rem 1rem;
+      font-size: 0.95rem;
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text);
+      background: var(--teal-ultra-pale);
+      transition: border-color var(--transition), box-shadow var(--transition);
+      outline: none;
+      box-sizing: border-box;
+    }
+
+    .form-row select {
+      height: 45px;
+      appearance: none;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233e6568' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      background-size: 1em;
+    }
+
+    .form-row input:focus,
+    .form-row select:focus,
+    .form-row textarea:focus {
+      border-color: var(--teal);
+      box-shadow: 0 0 0 3px rgba(96, 145, 149, 0.15);
+      background: var(--white);
+    }
+
+    /* Drag & Drop PDF Zone */
+    .drag-drop-zone {
+      border: 2px dashed var(--teal-light);
+      border-radius: var(--radius-sm);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      background: var(--teal-ultra-pale);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .drag-drop-zone:hover, .drag-drop-zone.dragover {
+      border-color: var(--teal);
+      background: var(--white);
+      box-shadow: 0 4px 12px rgba(96, 145, 149, 0.15);
+    }
+
+    .drag-drop-zone svg {
+      width: 48px;
+      height: 48px;
+      fill: var(--teal);
+      margin-bottom: 1rem;
+      transition: transform 0.3s ease;
+    }
+
+    .drag-drop-zone:hover svg {
+      transform: translateY(-5px);
+    }
+
+    .drag-drop-zone p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+
+    .drag-drop-zone p strong {
+      color: var(--teal-dark);
+    }
+
+    /* CV Selected Preview */
+    .cv-preview-container {
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--teal-pale);
+      border: 1px solid var(--teal-light);
+      border-radius: var(--radius-sm);
+      padding: 1rem 1.5rem;
+      margin-top: 1.5rem;
+      animation: fadeInForm 0.3s ease;
+    }
+
+    .cv-file-details {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .cv-file-icon {
+      font-size: 2rem;
+    }
+
+    .cv-file-info {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+
+    .cv-file-name {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--teal-dark);
+      word-break: break-all;
+    }
+
+    .cv-file-size {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-family: 'Space Mono', monospace;
+    }
+
+    .cv-remove-btn {
+      background: none;
+      border: none;
+      color: #a4402f;
+      font-size: 1.25rem;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .cv-remove-btn:hover {
+      transform: scale(1.15);
+    }
+
+    /* Progress bar */
+    .upload-progress-container {
+      display: none;
+      margin-top: 1.5rem;
+      text-align: left;
+    }
+
+    .progress-bar-wrapper {
+      height: 8px;
+      width: 100%;
+      background: var(--teal-pale);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: var(--teal);
+      border-radius: 4px;
+      transition: width 0.1s linear;
+    }
+
+    .progress-text {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--teal-dark);
+      margin-top: 0.4rem;
+      display: flex;
+      justify-content: space-between;
+      font-family: 'Space Mono', monospace;
+    }
+
+    /* Navigation Bar */
+    .form-navigation {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 2rem;
+      border-top: 1px solid var(--teal-pale);
+      padding-top: 1.5rem;
+      gap: 1rem;
+    }
+
+    .btn-secondary {
+      background: none;
+      border: 1.5px solid var(--teal-light);
+      color: var(--teal-dark);
+      border-radius: 2rem;
+      padding: 0.8rem 2rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      font-family: 'DM Sans', sans-serif;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+      background: var(--teal-pale);
+      border-color: var(--teal);
+    }
+
+    .spinner {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-radius: 50%;
+      border-top-color: var(--white);
+      animation: spin 0.8s linear infinite;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* ─── TESTIMONIALS ─── */
+    #testimonials {
+      background: var(--white);
+      padding: 6rem 2rem;
+    }
+
+    #testimonials .inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+    }
+
+    .testimonial-card {
+      background: var(--cream);
+      border: 1px solid rgba(96, 145, 149, 0.1);
+      border-radius: var(--radius);
+      padding: 2rem;
+      transition: all var(--transition);
+      position: relative;
+    }
+
+    .testimonial-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
+      border-color: var(--teal-light);
+    }
+
+    .t-quote {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      color: var(--teal-light);
+      line-height: 0.5;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .testimonial-card p {
+      color: var(--text-muted);
+      line-height: 1.75;
+      font-size: 0.97rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .t-author {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+    }
+
+    .t-avatar {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--teal-light);
+    }
+
+    .t-info strong {
+      display: block;
+      font-weight: 600;
+      color: var(--dark);
+      font-size: 0.92rem;
+    }
+
+    .t-info span {
+      font-size: 0.8rem;
+      color: var(--teal);
+      font-family: 'Space Mono', monospace;
+    }
+
+    /* ─── FAQ ─── */
+    #faq {
+      background: var(--teal-ultra-pale);
+      padding: 6rem 2rem;
+    }
+
+    #faq .inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-list {
+      margin-top: 3rem;
+    }
+
+    .faq-item {
+      background: var(--white);
+      border: 1px solid rgba(96, 145, 149, 0.12);
+      border-radius: var(--radius-sm);
+      margin-bottom: 1rem;
+      overflow: hidden;
+      transition: border-color var(--transition), box-shadow var(--transition);
+    }
+
+    .faq-item:hover {
+      border-color: var(--teal-light);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .faq-item h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--dark);
+      padding: 1.2rem 1.5rem;
+      cursor: pointer;
+    }
+
+    .faq-item p {
+      color: var(--text-muted);
+      padding: 0 1.5rem 1.2rem;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .faq-item a {
+      color: var(--teal);
+      font-weight: 500;
+    }
+
+    /* ─── CONTACT ─── */
+    #contact {
+      background: var(--dark);
+      padding: 6rem 2rem;
+    }
+
+    #contact .inner {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    #contact .section-title {
+      color: var(--white);
+    }
+
+    #contact .section-label {
+      color: var(--teal-light);
+    }
+
+    #contact .section-label::before {
+      background: var(--teal-light);
+    }
+
+    .contact-card {
+      background: rgba(96, 145, 149, 0.1);
+      border: 1px solid rgba(96, 145, 149, 0.25);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .contact-card p {
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .contact-card p strong {
+      color: var(--teal-light);
+    }
+
+    .contact-card a {
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .contact-card a:hover {
+      color: var(--teal-light);
+      text-decoration: underline;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: linear-gradient(160deg, var(--teal-deeper), var(--teal-dark));
+      color: var(--white);
+      padding: 4rem 2rem 2rem;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-brand .logo-text {
+      color: var(--white);
+      font-size: 1.5rem;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .footer-brand .logo-text span {
+      color: var(--teal-light);
+    }
+
+    .footer-brand p {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-social-row {
+      display: flex;
+      gap: 0.8rem;
+    }
+
+    .footer-social-icon {
+      width: 36px;
+      height: 36px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      transition: all var(--transition);
+    }
+
+    .footer-social-icon:hover {
+      background: var(--teal);
+      border-color: var(--teal);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    .footer-col h5 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 1.2rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 0.6rem;
+    }
+
+    .footer-col a {
+      color: rgba(255, 255, 255, 0.55);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color var(--transition);
+    }
+
+    .footer-col a:hover {
+      color: var(--teal-light);
+    }
+
+    .footer-col p {
+      color: rgba(255, 255, 255, 0.55);
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-trusted {
+      text-align: center;
+      padding: 2.5rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-trusted p {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.3);
+      margin-bottom: 1.5rem;
+    }
+
+    .trusted-logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .trusted-logos img {
+      height: 28px;
+      max-width: 90px;
+      opacity: 0.3;
+      filter: brightness(0) invert(1);
+      transition: opacity var(--transition);
+    }
+
+    .trusted-logos img:hover {
+      opacity: 0.65;
+    }
+
+    .footer-bottom {
+      padding-top: 2rem;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.3);
+      font-size: 0.85rem;
+    }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      50% {
+        transform: scale(1.5);
+        opacity: 0.6;
+      }
+    }
+
+    @keyframes scrollLine {
+      0% {
+        height: 40px;
+        opacity: 1;
+      }
+
+      100% {
+        height: 10px;
+        opacity: 0;
+      }
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      header {
+        padding: 1rem 1.5rem;
+      }
+
+      .logo-text {
+        font-size: 1.1rem;
+      }
+
+      .nav-toggle {
+        display: inline-flex;
+      }
+
+      nav {
+        position: fixed;
+        top: 72px;
+        left: 1rem;
+        right: 1rem;
+        background: var(--white);
+        border: 1px solid rgba(96, 145, 149, 0.15);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow-lg);
+        padding: 0.8rem;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height var(--transition), opacity var(--transition), padding var(--transition);
+      }
+
+      nav.open {
+        max-height: 420px;
+        opacity: 1;
+        padding: 0.8rem;
+      }
+
+      nav ul {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.3rem;
+      }
+
+      .nav-btn {
+        width: 100%;
+        padding: 0.8rem 1rem;
+        font-size: 0.95rem;
+        text-align: center;
+      }
+
+      .about-layout,
+      .internship-layout,
+      .ceo-card {
+        grid-template-columns: 1fr;
+      }
+
+      .ceo-card-left {
+        padding: 2.5rem 2rem;
+      }
+
+      .about-img-badge {
+        bottom: 0.8rem;
+        right: 0.8rem;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+
+      .section {
+        padding: 4rem 1.2rem;
+      }
+
+      #features,
+      #services,
+      #process,
+      #about,
+      #internship,
+      #testimonials,
+      #faq,
+      #contact,
+      #ceo-message {
+        padding: 4rem 1.2rem;
+      }
+
+      footer {
+        padding: 3rem 1.2rem 1.5rem;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr;
+        gap: 1.8rem;
+      }
+
+      header {
+        padding: 0.8rem 1.2rem;
+      }
+
+      nav {
+        top: 66px;
+      }
+
+      /* Improve image sizing and card spacing on smaller screens */
+      .service-card-img {
+        height: 120px;
+        object-fit: cover;
+      }
+
+      .feature-card,
+      .service-card,
+      .process-step,
+      .testimonial-card {
+        padding: 1.2rem;
+      }
+
+      .hero {
+        min-height: 60vh;
+        padding: 5rem 1rem 3rem;
+      }
+
+      .hero-sub {
+        font-size: 1rem;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+      }
+    }
+
+    @media (max-width: 420px) {
+
+      /* Tighter layout for very small devices */
+      .hero {
+        min-height: 55vh;
+        padding: 4rem 0.8rem 2.5rem;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+        line-height: 1.05;
+      }
+
+      .hero-sub {
+        font-size: 0.95rem;
+      }
+
+      .service-card-img {
+        height: 100px;
+      }
+
+      .section {
+        padding: 3rem 0.8rem;
+      }
+
+      .section-title {
+        font-size: 1.6rem;
+      }
+
+      header {
+        padding: 0.6rem 0.8rem;
+      }
+
+      .logo-text {
+        font-size: 1rem;
+      }
+
+      .features-grid,
+      .services-grid {
+        gap: 1rem;
+      }
+
+      /* Ensure images don't overflow */
+      .service-card-img,
+      .internship-img,
+      .about-img-wrap img,
+      .t-avatar,
+      .ceo-photo {
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* Reduce large shadows and spacing to keep content visible */
+      .shadow-lg,
+      .shadow-md {
+        box-shadow: none !important;
+      }
+    }
+  </style>
+
+  <!-- EmailJS SDK Integration -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function() {
+      // Initialize EmailJS with your Public Key
+      emailjs.init({
+        publicKey: "E4bHBpIgbzB0dlatN"
+      });
+    })();
+  </script>
+</head>
+
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ─── HEADER ─── -->
+  <header id="header">
+    <a href="#home" class="logo-container">
+      <img src="logo.png" alt="MentorTech Logo" class="logo-img" width="44" height="44" />
+      <span class="logo-text">Mentor<span>Tech</span></span>
+    </a>
+    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="primary-nav"
+      aria-label="Toggle navigation menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="primary-nav" aria-label="Primary">
+      <ul>
+        <li><a href="#home" class="nav-btn">Home</a></li>
+        <li><a href="#about" class="nav-btn">About</a></li>
+        <li><a href="#services" class="nav-btn">Services</a></li>
+        <li><a href="#internship" class="nav-btn">Internship</a></li>
+        <li><a href="#contact" class="nav-btn cta">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ─── HERO ─── -->
+    <section id="home" class="hero">
+      <div class="hero-backdrop"></div>
+      <div class="hero-grid"></div>
+      <div class="hero-content">
+        <div class="hero-eyebrow">Islamabad, Pakistan · Est. 2024</div>
+        <h1>Code. Learn.<br><em>Grow.</em></h1>
+        <p class="hero-sub">
+          Kickstart your web development journey with MentorTech — where innovation meets mentorship and talent meets
+          opportunity.
+        </p>
+        <div class="hero-actions">
+          <a href="#services" class="btn-primary">Explore Services ↓</a>
+          <a href="#internship" class="btn-outline">Apply for Internship</a>
+        </div>
+      </div>
+      <div class="hero-scroll">
+        <div class="scroll-line"></div>
+        Scroll
+      </div>
+    </section>
+
+    <!-- ─── FEATURES ─── -->
+    <section id="features">
+      <div class="inner">
+        <div class="section-label">Why Choose Us</div>
+        <h2 class="section-title">Built on trust,<br>delivered with <em>excellence</em></h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <span class="feature-icon">🚀</span>
+            <h3>Fast Delivery</h3>
+            <p>We deliver projects on time, every time, with a relentless focus on quality and reliability.</p>
+          </div>
+          <div class="feature-card">
+            <span class="feature-icon">🔒</span>
+            <h3>Secure Solutions</h3>
+            <p>Security is at the core of every line we write — your data is always protected.</p>
+          </div>
+          <div class="feature-card">
+            <span class="feature-icon">🤝</span>
+            <h3>Client Collaboration</h3>
+            <p>We work closely with clients to understand their needs and provide tailored solutions.</p>
+          </div>
+          <div class="feature-card">
+            <span class="feature-icon">💡</span>
+            <h3>Innovative Approach</h3>
+            <p>Our team leverages cutting-edge technologies and creative thinking to solve complex problems.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── ABOUT ─── -->
+    <section id="about">
+      <div class="inner">
+        <div class="section-label">About Us</div>
+        <div class="about-layout">
+          <div class="about-img-wrap">
+            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80"
+              alt="Our Team" loading="lazy" decoding="async" />
+            <div class="about-img-badge">
+              <span class="num">2+</span>
+              <span class="lbl">Years of excellence</span>
+            </div>
+          </div>
+          <div class="about-text">
+            <h2 class="section-title">A team <em>passionate</em> about your success</h2>
+            <p>
+              <strong>MentorTech</strong> is a leading IT solutions provider based in Islamabad, Pakistan. We specialize
+              in delivering innovative, scalable, and secure web and software solutions for businesses of all sizes.
+            </p>
+            <p>
+              What sets us apart is our commitment to mentorship and talent development. We invest in the next
+              generation of developers through structured internships, real-world projects, and continuous learning
+              opportunities.
+            </p>
+            <p>
+              Partner with MentorTech for reliable technology, expert guidance, and a shared vision for digital success.
+            </p>
+            <div class="ceo-strip">
+              <div class="avatar">👨‍💼</div>
+              <div class="info">
+                <strong>Ilham Amjad</strong>
+                <span>Founder &amp; CEO</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── SERVICES ─── -->
+    <section id="services">
+      <div class="inner">
+        <div class="section-label">Our Services</div>
+        <h2 class="section-title">Solutions crafted<br>for <em>every</em> vision</h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80"
+              alt="Website Development" class="service-card-img" loading="lazy" decoding="async" />
+            <div class="service-card-body">
+              <h3>Website Development</h3>
+              <p>Modern, responsive, high-performance websites tailored to your business needs.</p>
+            </div>
+          </div>
+          <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80"
+              alt="Custom Software" class="service-card-img" loading="lazy" decoding="async" />
+            <div class="service-card-body">
+              <h3>Custom Software Solutions</h3>
+              <p>Robust and scalable software to automate and optimize your business processes.</p>
+            </div>
+          </div>
+          <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
+              alt="UI/UX Design" class="service-card-img" loading="lazy" decoding="async" />
+            <div class="service-card-body">
+              <h3>UI/UX Design</h3>
+              <p>Intuitive, engaging interfaces that deliver exceptional user experiences.</p>
+            </div>
+          </div>
+          <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1517520287167-4bbf64a00d66?auto=format&fit=crop&w=400&q=80"
+              alt="Training" class="service-card-img" loading="lazy" decoding="async" />
+            <div class="service-card-body">
+              <h3>Technical Training &amp; Internships</h3>
+              <p>Hands-on programs empowering the next generation of tech talent.</p>
+            </div>
+          </div>
+          <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=400&q=80"
+              alt="iOS & App Development" class="service-card-img" loading="lazy" decoding="async" />
+            <div class="service-card-body">
+              <h3>iOS &amp; App Development</h3>
+              <p>Native iOS apps and cross-platform mobile solutions with polished UX and high performance.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── PROCESS ─── -->
+    <section id="process">
+      <div class="inner">
+        <div class="section-label">Our Process</div>
+        <h2 class="section-title">How we turn<br>ideas into <em>reality</em></h2>
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="process-dot">1</div>
+            <span class="step-num">STEP ONE</span>
+            <h4>Consultation</h4>
+            <p>We start by understanding your business goals, challenges, and requirements.</p>
+          </div>
+          <div class="process-step">
+            <div class="process-dot">2</div>
+            <span class="step-num">STEP TWO</span>
+            <h4>Planning</h4>
+            <p>Our experts design a roadmap and select the best technologies for your project.</p>
+          </div>
+          <div class="process-step">
+            <div class="process-dot">3</div>
+            <span class="step-num">STEP THREE</span>
+            <h4>Development</h4>
+            <p>We build, test, and refine your solution with regular feedback loops.</p>
+          </div>
+          <div class="process-step">
+            <div class="process-dot">4</div>
+            <span class="step-num">STEP FOUR</span>
+            <h4>Launch &amp; Support</h4>
+            <p>After launch, we provide ongoing support and maintenance for your peace of mind.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── CEO MESSAGE ─── -->
+    <section id="ceo-message">
+      <div class="inner">
+        <div class="section-label">Leadership</div>
+        <h2 class="section-title">A message from<br>our <em>founder</em></h2>
+        <div class="ceo-card">
+          <div class="ceo-card-left">
+            <img src="image.png" alt="Ilham Amjad - CEO" class="ceo-photo"
+              onerror="this.src='https://ui-avatars.com/api/?name=Ilham+Amjad&background=609195&color=fff&size=200'"
+              loading="lazy" decoding="async" />
+            <h3>Ilham Amjad</h3>
+            <p>Founder &amp; CEO</p>
+            <div class="ceo-quote-mark">"</div>
+          </div>
+          <div class="ceo-card-right">
+            <p>At MentorTech, we believe that technology is not just about code — it's about people, passion, and
+              purpose. When I founded this company, the goal was clear: to create a space where innovation thrives and
+              young minds are empowered to build the future.</p>
+            <p>We are more than a software house — we are a hub for creativity, mentorship, and real-world learning. In
+              today's fast-paced digital landscape, businesses need reliable and scalable tech solutions, and aspiring
+              developers need the right guidance to excel. We proudly serve both.</p>
+            <p>Our mission is twofold: to deliver high-quality, customized web and software solutions to clients, and to
+              mentor the next generation of developers through hands-on internships, real projects, and career-focused
+              training.</p>
+            <p>Whether you're a business looking to grow digitally or a student seeking to build your tech career,
+              MentorTech is committed to walking that journey with you.</p>
+            <p><strong style="color: var(--teal-dark);">Let's build something great — together.</strong></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── INTERNSHIP ─── -->
+    <section id="internship">
+      <div class="inner">
+        <div class="section-label">Internship Program</div>
+        <div class="internship-layout">
+          <div>
+            <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=800&q=80"
+              alt="Internship" class="internship-img" loading="lazy" decoding="async" />
+          </div>
+          <div>
+            <h2 class="section-title">Learn by doing.<br>Grow by <em>building.</em></h2>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Join our 2-month Web Development Internship and
+              gain hands-on experience with the real tools used in industry.</p>
+            <div class="internship-skills">
+              <span class="skill-chip">HTML &amp; CSS</span>
+              <span class="skill-chip">JavaScript</span>
+              <span class="skill-chip">React.js</span>
+              <span class="skill-chip">Node.js</span>
+              <span class="skill-chip">MongoDB</span>
+              <span class="skill-chip">REST APIs</span>
+              <span class="skill-chip">Git &amp; GitHub</span>
+            </div>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">📧 Apply at: <a
+                href="mailto:softwarehousementor@gmail.com"
+                style="color: var(--teal); font-weight: 600;">softwarehousementor@gmail.com</a></p>
+
+            <button class="apply-btn" id="show-apply-form-btn">Apply Now ↗</button>
+
+            <form class="internship-form-inline" id="inline-apply-form" novalidate enctype="multipart/form-data">
+              <!-- Step Progress Indicators -->
+              <div class="form-steps-indicator">
+                <div class="step-indicator active" data-step="1">
+                  <div class="step-number">1</div>
+                  <span class="step-name">Personal</span>
+                </div>
+                <div class="step-line" id="step-line-1"></div>
+                <div class="step-indicator" data-step="2">
+                  <div class="step-number">2</div>
+                  <span class="step-name">Education</span>
+                </div>
+                <div class="step-line" id="step-line-2"></div>
+                <div class="step-indicator" data-step="3">
+                  <div class="step-number">3</div>
+                  <span class="step-name">Professional</span>
+                </div>
+                <div class="step-line" id="step-line-3"></div>
+                <div class="step-indicator" data-step="4">
+                  <div class="step-number">4</div>
+                  <span class="step-name">Resume</span>
+                </div>
+              </div>
+
+              <!-- STEP 1: PERSONAL INFORMATION -->
+              <div class="form-step-pane active" data-step="1">
+                <h3 class="form-section-title">Personal Information</h3>
+                <div class="form-grid">
+                  <div class="form-row">
+                    <label for="fullName">Full Name *</label>
+                    <input type="text" id="fullName" name="fullName" required placeholder="Your full name" autocomplete="name" />
+                  </div>
+                  <div class="form-row">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required placeholder="yourname@email.com" autocomplete="email" />
+                  </div>
+                </div>
+                <div class="form-grid">
+                  <div class="form-row">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="e.g. 03001234567" autocomplete="tel" />
+                  </div>
+                  <div class="form-row">
+                    <label for="cnic">CNIC (Optional)</label>
+                    <input type="text" id="cnic" name="cnic" placeholder="e.g. 37405-XXXXXXX-X" />
+                  </div>
+                </div>
+                <div class="form-grid">
+                  <div class="form-row">
+                    <label for="city">City</label>
+                    <input type="text" id="city" name="city" placeholder="e.g. Islamabad" />
+                  </div>
+                  <div class="form-row">
+                    <label for="country">Country</label>
+                    <input type="text" id="country" name="country" placeholder="e.g. Pakistan" value="Pakistan" />
+                  </div>
+                </div>
+              </div>
+
+              <!-- STEP 2: EDUCATION -->
+              <div class="form-step-pane" data-step="2">
+                <h3 class="form-section-title">Academic Details</h3>
+                <div class="form-row">
+                  <label for="university">University / Institution *</label>
+                  <input type="text" id="university" name="university" required placeholder="e.g. NUST, FAST, COMSATS" />
+                </div>
+                <div class="form-grid">
+                  <div class="form-row">
+                    <label for="degree">Degree / Program *</label>
+                    <input type="text" id="degree" name="degree" required placeholder="e.g. BS Computer Science" />
+                  </div>
+                  <div class="form-row">
+                    <label for="semester">Current Semester</label>
+                    <select id="semester" name="semester">
+                      <option value="">Select Semester</option>
+                      <option value="1st">1st Semester</option>
+                      <option value="2nd">2nd Semester</option>
+                      <option value="3rd">3rd Semester</option>
+                      <option value="4th">4th Semester</option>
+                      <option value="5th">5th Semester</option>
+                      <option value="6th">6th Semester</option>
+                      <option value="7th">7th Semester</option>
+                      <option value="8th">8th Semester</option>
+                      <option value="Graduated">Graduated</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-grid">
+                  <div class="form-row">
+                    <label for="graduationYear">Graduation Year</label>
+                    <input type="number" id="graduationYear" name="graduationYear" min="2000" max="2035" placeholder="e.g. 2026" />
+                  </div>
+                  <div class="form-row">
+                    <label for="cgpa">CGPA (Out of 4.0)</label>
+                    <input type="number" id="cgpa" name="cgpa" min="0" max="4" step="0.01" placeholder="e.g. 3.45" />
+                  </div>
+                </div>
+              </div>
+
+              <!-- STEP 3: PROFESSIONAL INFO -->
+              <div class="form-step-pane" data-step="3">
+                <h3 class="form-section-title">Professional Profile</h3>
+                <div class="form-grid">
+                  <div class="form-row">
+                    <label for="position">Position Applying For *</label>
+                    <select id="position" name="position" required>
+                      <option value="">Select Position</option>
+                      <option value="MERN Stack Web Developer">MERN Stack Web Developer</option>
+                      <option value="UI/UX Designer">UI/UX Designer</option>
+                      <option value="Mobile App Developer">Mobile App Developer (Flutter/React Native)</option>
+                      <option value="SQA Engineer">SQA Engineer</option>
+                      <option value="Python/AI Developer">Python/AI Developer</option>
+                    </select>
+                  </div>
+                  <div class="form-row">
+                    <label for="internshipType">Internship Type</label>
+                    <select id="internshipType" name="internshipType">
+                      <option value="On-site">On-site</option>
+                      <option value="Remote">Remote</option>
+                      <option value="Hybrid">Hybrid</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <label for="skills">Key Skills</label>
+                  <input type="text" id="skills" name="skills" placeholder="e.g. JavaScript, React, Node.js, CSS (comma separated)" />
+                </div>
+                <div class="form-row">
+                  <label for="experience">Work Experience / Projects</label>
+                  <textarea id="experience" name="experience" rows="3" placeholder="Briefly describe your previous experience or academic projects..."></textarea>
+                </div>
+                <div class="form-grid">
+                  <div class="form-row">
+                    <label for="linkedin">LinkedIn Profile URL</label>
+                    <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/username" />
+                  </div>
+                  <div class="form-row">
+                    <label for="github">GitHub Profile URL</label>
+                    <input type="url" id="github" name="github" placeholder="https://github.com/username" />
+                  </div>
+                  <div class="form-row">
+                    <label for="portfolio">Portfolio Website URL</label>
+                    <input type="url" id="portfolio" name="portfolio" placeholder="https://yourportfolio.com" />
+                  </div>
+                </div>
+              </div>
+
+              <!-- STEP 4: SUBMISSION & ATTACHMENT -->
+              <div class="form-step-pane" data-step="4">
+                <h3 class="form-section-title">Resume & Statement</h3>
+                <div class="form-row">
+                  <label for="coverLetter">Cover Letter / Introduction</label>
+                  <textarea id="coverLetter" name="coverLetter" rows="3" placeholder="Introduce yourself to our hiring team..."></textarea>
+                </div>
+                <div class="form-row">
+                  <label for="whyJoin">Why do you want to join MentorTech?</label>
+                  <textarea id="whyJoin" name="whyJoin" rows="3" placeholder="Tell us why you are interested in this internship..."></textarea>
+                </div>
+                <div class="form-row">
+                  <label for="availableDate">Available Start Date</label>
+                  <input type="date" id="availableDate" name="availableDate" />
+                </div>
+                <div class="form-row">
+                  <label>Resume Upload * (PDF only, Max 10MB)</label>
+                  <div id="drag-drop-zone" class="drag-drop-zone">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/>
+                    </svg>
+                    <p><strong>Drag & Drop</strong> your Resume here or <strong>Click to Browse</strong></p>
+                    <p class="file-limits">PDF file format only (max. 10MB)</p>
+                    <input type="file" id="resume" name="resume" accept=".pdf" style="display:none;" required />
+                  </div>
+                  
+                  <!-- File preview card -->
+                  <div id="cv-preview" class="cv-preview-container">
+                    <div class="cv-file-details">
+                      <span class="cv-file-icon">📄</span>
+                      <div class="cv-file-info">
+                        <span id="cv-name" class="cv-file-name">resume.pdf</span>
+                        <span id="cv-size" class="cv-file-size">0.0 MB</span>
+                      </div>
+                    </div>
+                    <button type="button" id="cv-remove-btn" class="cv-remove-btn" title="Remove Resume">&times;</button>
+                  </div>
+                  
+                  <!-- Progress bar -->
+                  <div id="upload-progress" class="upload-progress-container">
+                    <div class="progress-bar-wrapper">
+                      <div id="progress-bar-fill" class="progress-bar-fill"></div>
+                    </div>
+                    <div class="progress-text">
+                      <span id="progress-status">Uploading Resume...</span>
+                      <span id="progress-percentage">0%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Error Box -->
+              <div id="inline-form-error" role="alert" aria-live="assertive"
+                style="display:none; color: #a4402f; font-weight: 600; margin-top: 1rem; padding: 0.8rem 1rem; background: #fbe9e4; border-radius: var(--radius-sm); text-align: left; line-height: 1.5;">
+                Something went wrong. Please check your details and try again.
+              </div>
+
+              <!-- Success Box -->
+              <div id="inline-form-success" role="status" aria-live="polite"
+                style="display:none; color: var(--teal-dark); font-weight: 600; margin-top: 1rem; padding: 1.5rem 1rem; background: var(--teal-pale); border-radius: var(--radius-sm); font-size: 1.1rem; line-height: 1.5; border: 1px solid var(--teal-light); text-align: center;">
+                🎉 <strong>Thank you for applying!</strong><br>
+                Your internship application and resume have been successfully received. We have sent a confirmation email to you.
+              </div>
+
+              <div class="form-navigation" id="form-navigation-bar">
+                <button type="button" class="btn-secondary" id="prev-step-btn" style="display:none;">Back</button>
+                <button type="button" class="apply-btn" id="next-step-btn" style="margin-bottom: 0;">Next Step ➔</button>
+                <button type="submit" class="apply-btn" id="inline-form-submit" style="display:none; margin-bottom: 0;">
+                  <span class="btn-label">Submit Application</span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── TESTIMONIALS ─── -->
+    <section id="testimonials">
+      <div class="inner">
+        <div class="section-label">Testimonials</div>
+        <h2 class="section-title">Voices of our<br><em>community</em></h2>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <span class="t-quote">"</span>
+            <p>MentorTech delivered our project on time with exceptional quality. Their team is highly skilled and
+              professional.</p>
+            <div class="t-author">
+              <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Ahmed Raza" class="t-avatar" loading="lazy"
+                decoding="async" />
+              <div class="t-info">
+                <strong>Ahmed Raza</strong>
+                <span>Business Owner</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <span class="t-quote">"</span>
+            <p>The internship program gave me real-world experience and confidence to start my tech career. Highly
+              recommended!</p>
+            <div class="t-author">
+              <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sara Khan" class="t-avatar"
+                loading="lazy" decoding="async" />
+              <div class="t-info">
+                <strong>Sara Khan</strong>
+                <span>Web Development Intern</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <span class="t-quote">"</span>
+            <p>Their mentorship and support helped us scale our startup quickly. We truly value this partnership!</p>
+            <div class="t-author">
+              <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Bilal Sheikh" class="t-avatar"
+                loading="lazy" decoding="async" />
+              <div class="t-info">
+                <strong>Bilal Sheikh</strong>
+                <span>Startup Founder</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── FAQ ─── -->
+    <section id="faq">
+      <div class="inner">
+        <div class="section-label">FAQ</div>
+        <h2 class="section-title">Frequently asked<br><em>questions</em></h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <h4>What industries do you serve?</h4>
+            <p>We serve startups, SMEs, enterprises, and educational institutions across various industries including
+              e-commerce, healthcare, education, and more.</p>
+          </div>
+          <div class="faq-item">
+            <h4>How do I start a project?</h4>
+            <p>Simply <a href="#contact">contact us</a> with your requirements. We'll schedule a free consultation to
+              discuss your needs and build a roadmap together.</p>
+          </div>
+          <div class="faq-item">
+            <h4>Do you offer post-launch support?</h4>
+            <p>Yes, we provide ongoing support and maintenance packages tailored to your specific needs and budget.</p>
+          </div>
+          <div class="faq-item">
+            <h4>Can I join your internship program remotely?</h4>
+            <p>Yes, we offer both on-site and remote internship opportunities. Check our <a
+                href="#internship">Internship Program</a> section for full details.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── CONTACT ─── -->
+    <section id="contact">
+      <div class="inner">
+        <div class="section-label">Contact Us</div>
+        <h2 class="section-title">Let's build something<br><em>great</em> together</h2>
+        <div class="contact-card">
+          <p><strong>Email:</strong> <a href="mailto:softwarehousementor@gmail.com">softwarehousementor@gmail.com</a></p>
+          <p><strong>Phone:</strong> +92 300 1234567</p>
+          <p><strong>Location:</strong> Office #12, 2nd Floor, Blue Area, Islamabad, Pakistan (On-site / Hybrid)</p>
+        </div>
+        <div style="margin-top: 2rem; text-align: center;">
+          <a href="mailto:softwarehousementor@gmail.com" class="btn-primary">Send us a message →</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="logo-text">Mentor<span>Tech</span></span>
+          <p>A hub for creativity, mentorship, and real-world learning. Empowering businesses and developers alike.</p>
+          <div class="footer-social-row">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-icon"
+              aria-label="Facebook">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.408 24 22.674V1.326C24 .592 23.406 0 22.675 0" />
+              </svg>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="footer-social-icon"
+              aria-label="LinkedIn">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 10.268h-3v-4.604c0-1.099-.021-2.513-1.532-2.513-1.533 0-1.768 1.197-1.768 2.435v4.682h-3v-9h2.881v1.233h.041c.401-.761 1.379-1.563 2.838-1.563 3.035 0 3.595 2.001 3.595 4.599v4.731z" />
+              </svg>
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="footer-social-icon"
+              aria-label="Twitter">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M24 4.557a9.93 9.93 0 0 1-2.828.775 4.932 4.932 0 0 0 2.165-2.724c-.951.564-2.005.974-3.127 1.195a4.92 4.92 0 0 0-8.384 4.482C7.691 8.095 4.066 6.13 1.64 3.161c-.542.929-.856 2.01-.857 3.17 0 2.188 1.115 4.116 2.823 5.247a4.904 4.904 0 0 1-2.229-.616c-.054 2.281 1.581 4.415 3.949 4.89a4.936 4.936 0 0 1-2.224.084c.627 1.956 2.444 3.377 4.6 3.417A9.867 9.867 0 0 1 0 21.543a13.94 13.94 0 0 0 7.548 2.212c9.058 0 14.009-7.513 14.009-14.009 0-.213-.005-.425-.014-.636A10.012 10.012 0 0 0 24 4.557z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Navigation</h5>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#internship">Internship</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="#services">Web Development</a></li>
+            <li><a href="#services">Custom Software</a></li>
+            <li><a href="#services">UI/UX Design</a></li>
+            <li><a href="#services">Technical Training</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <p><a href="mailto:softwarehousementor@gmail.com">softwarehousementor@gmail.com</a></p>
+          <p>+92 300 1234567</p>
+          <p>Office #12, 2nd Floor,<br>Blue Area, Islamabad</p>
+        </div>
+      </div>
+
+      <div class="footer-trusted">
+        <p>Trusted by leading organizations</p>
+        <div class="trusted-logos">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft"
+            loading="lazy" decoding="async" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM" loading="lazy"
+            decoding="async" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google"
+            loading="lazy" decoding="async" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix"
+            loading="lazy" decoding="async" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/0/02/Stack_Overflow_logo.svg" alt="Stack Overflow"
+            loading="lazy" decoding="async" />
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 MentorTech. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Header scroll effect
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+
+    // Mobile navigation toggle
+    const navToggle = document.getElementById('nav-toggle');
+    const primaryNav = document.getElementById('primary-nav');
+    if (navToggle && primaryNav) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = primaryNav.classList.toggle('open');
+        navToggle.classList.toggle('open', isOpen);
+        navToggle.setAttribute('aria-expanded', String(isOpen));
+      });
+      // Close the mobile menu after a nav link is chosen
+      primaryNav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          primaryNav.classList.remove('open');
+          navToggle.classList.remove('open');
+          navToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+
+    // Apply form toggle
+    const showFormBtn = document.getElementById('show-apply-form-btn');
+    const inlineForm = document.getElementById('inline-apply-form');
+    if (showFormBtn && inlineForm) {
+      showFormBtn.addEventListener('click', () => {
+        inlineForm.style.display = 'block';
+        showFormBtn.style.display = 'none';
+        inlineForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    }
+
+    // Advanced Multi-step Form & Drag-and-Drop Script
+    if (inlineForm) {
+      const nextBtn = document.getElementById('next-step-btn');
+      const prevBtn = document.getElementById('prev-step-btn');
+      const submitBtn = document.getElementById('inline-form-submit');
+      const successBox = document.getElementById('inline-form-success');
+      const errorBox = document.getElementById('inline-form-error');
+
+      const steps = document.querySelectorAll('.form-step-pane');
+      const indicators = document.querySelectorAll('.step-indicator');
+      const lines = document.querySelectorAll('.step-line');
+
+      let currentStep = 1;
+      let selectedFile = null;
+      let isSubmitting = false;
+
+      // 1. Navigation handlers
+      const updateFormSteps = () => {
+        // Show/hide panes
+        steps.forEach(step => {
+          step.classList.toggle('active', parseInt(step.dataset.step, 10) === currentStep);
+        });
+
+        // Update indicators
+        indicators.forEach(indicator => {
+          const stepNum = parseInt(indicator.dataset.step, 10);
+          indicator.classList.toggle('active', stepNum === currentStep);
+          indicator.classList.toggle('completed', stepNum < currentStep);
+        });
+
+        // Update connection lines
+        lines.forEach(line => {
+          if (line) {
+            const lineNum = parseInt(line.id.replace('step-line-', ''), 10);
+            line.classList.toggle('filled', lineNum < currentStep);
+          }
+        });
+
+        // Show/hide buttons
+        prevBtn.style.display = currentStep > 1 ? 'inline-flex' : 'none';
+
+        if (currentStep === 4) {
+          nextBtn.style.display = 'none';
+          submitBtn.style.display = 'inline-flex';
+        } else {
+          nextBtn.style.display = 'inline-flex';
+          submitBtn.style.display = 'none';
+        }
+      };
+
+      const validateStep = (step) => {
+        const pane = document.querySelector(`.form-step-pane[data-step="${step}"]`);
+        const inputs = pane.querySelectorAll('input[required], select[required], textarea[required]');
+        let stepValid = true;
+
+        inputs.forEach(input => {
+          if (!input.checkValidity()) {
+            input.reportValidity();
+            stepValid = false;
+          }
+        });
+
+        return stepValid;
+      };
+
+      nextBtn.addEventListener('click', () => {
+        if (validateStep(currentStep)) {
+          currentStep++;
+          updateFormSteps();
+          inlineForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+
+      prevBtn.addEventListener('click', () => {
+        currentStep--;
+        updateFormSteps();
+        inlineForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+
+      // 2. Drag and drop file upload system
+      const dragDropZone = document.getElementById('drag-drop-zone');
+      const fileInput = document.getElementById('resume');
+      const cvPreview = document.getElementById('cv-preview');
+      const cvName = document.getElementById('cv-name');
+      const cvSize = document.getElementById('cv-size');
+      const cvRemoveBtn = document.getElementById('cv-remove-btn');
+
+      const highlight = (e) => {
+        e.preventDefault();
+        dragDropZone.classList.add('dragover');
+      };
+
+      const unhighlight = (e) => {
+        e.preventDefault();
+        dragDropZone.classList.remove('dragover');
+      };
+
+      ['dragenter', 'dragover'].forEach(eventName => {
+        dragDropZone.addEventListener(eventName, highlight, false);
+      });
+
+      ['dragleave', 'drop'].forEach(eventName => {
+        dragDropZone.addEventListener(eventName, unhighlight, false);
+      });
+
+      const handleFile = (file) => {
+        errorBox.style.display = 'none';
+        if (!file) return;
+
+        // Validation: Must be PDF
+        if (file.type !== 'application/pdf' && !file.name.endsWith('.pdf')) {
+          showError('Invalid file format. Only PDF files are allowed.');
+          return;
+        }
+
+        // Validation: Max 10MB
+        if (file.size > 10 * 1024 * 1024) {
+          showError('File size limit exceeded. Your CV must be smaller than 10MB.');
+          return;
+        }
+
+        selectedFile = file;
+
+        // Show file details
+        cvName.textContent = file.name;
+        cvSize.textContent = (file.size / (1024 * 1024)).toFixed(2) + ' MB';
+        cvPreview.style.display = 'flex';
+        dragDropZone.style.display = 'none';
+
+        // Keep fileInput file array synced (so native validations pass)
+        const dt = new DataTransfer();
+        dt.items.add(file);
+        fileInput.files = dt.files;
+      };
+
+      dragDropZone.addEventListener('drop', (e) => {
+        const dt = e.dataTransfer;
+        const files = dt.files;
+        if (files.length > 0) {
+          handleFile(files[0]);
+        }
+      });
+
+      dragDropZone.addEventListener('click', () => {
+        fileInput.click();
+      });
+
+      fileInput.addEventListener('change', () => {
+        if (fileInput.files.length > 0) {
+          handleFile(fileInput.files[0]);
+        }
+      });
+
+      cvRemoveBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        selectedFile = null;
+        fileInput.value = '';
+        cvPreview.style.display = 'none';
+        dragDropZone.style.display = 'block';
+      });
+
+      const showError = (msg) => {
+        errorBox.textContent = msg;
+        errorBox.style.display = 'block';
+        errorBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      };
+
+      // 3. Submit application to backend using progress tracker
+      inlineForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (isSubmitting) return;
+
+        // Double check validation of step 4
+        if (!validateStep(4)) return;
+
+        if (!selectedFile) {
+          showError('Please upload your Resume PDF to complete application.');
+          return;
+        }
+
+        isSubmitting = true;
+
+        // Toggle buttons state
+        submitBtn.disabled = true;
+        prevBtn.disabled = true;
+        submitBtn.style.opacity = '0.7';
+        submitBtn.innerHTML = '<span class="spinner"></span>Sending...';
+
+        errorBox.style.display = 'none';
+
+        // Setup upload progress bar
+        const uploadProgress = document.getElementById('upload-progress');
+        const progressFill = document.getElementById('progress-bar-fill');
+        const progressPercent = document.getElementById('progress-percentage');
+        const progressStatus = document.getElementById('progress-status');
+
+        uploadProgress.style.display = 'block';
+        progressFill.style.width = '0%';
+        progressPercent.textContent = '0%';
+        progressStatus.textContent = 'Uploading Resume...';
+
+        // Prepare FormData
+        const formData = new FormData(inlineForm);
+        // Ensure standard field names
+        formData.set('resume', selectedFile);
+
+        // Determine API Endpoint
+        const host = window.location.origin.includes('localhost') || window.location.origin.includes('127.0.0.1')
+          ? 'http://localhost:5001'
+          : '';
+        const url = `${host}/api/internships/apply`;
+
+        // Send request using XMLHttpRequest to track upload progress
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', url, true);
+
+        xhr.upload.addEventListener('progress', (e) => {
+          if (e.lengthComputable) {
+            const percent = Math.round((e.loaded / e.total) * 100);
+            progressFill.style.width = percent + '%';
+            progressPercent.textContent = percent + '%';
+            if (percent === 100) {
+              progressStatus.textContent = 'Processing Application & Sending Emails...';
+            }
+          }
+        });
+
+        xhr.onreadystatechange = () => {
+          if (xhr.readyState === 4) {
+            isSubmitting = false;
+            submitBtn.disabled = false;
+            prevBtn.disabled = false;
+            submitBtn.style.opacity = '1';
+            submitBtn.textContent = 'Submit Application';
+
+            try {
+              const res = JSON.parse(xhr.responseText);
+              if (xhr.status >= 200 && xhr.status < 300) {
+                // Success
+                uploadProgress.style.display = 'none';
+                successBox.style.display = 'block';
+
+                // Hide inputs & navigation
+                document.querySelector('.form-steps-indicator').style.display = 'none';
+                steps.forEach(step => step.style.display = 'none');
+                document.getElementById('form-navigation-bar').style.display = 'none';
+
+                // Reset form fields
+                inlineForm.reset();
+                selectedFile = null;
+                cvPreview.style.display = 'none';
+                dragDropZone.style.display = 'block';
+
+                // Scroll to success box
+                successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                // Reset page view after delay
+                setTimeout(() => {
+                  successBox.style.display = 'none';
+                  inlineForm.style.display = 'none';
+                  showFormBtn.style.display = 'inline-flex';
+
+                  // Restore layout for future openings
+                  document.querySelector('.form-steps-indicator').style.display = 'flex';
+                  document.getElementById('form-navigation-bar').style.display = 'flex';
+                  currentStep = 1;
+                  updateFormSteps();
+                }, 8000);
+              } else {
+                // Error from server
+                uploadProgress.style.display = 'none';
+                showError(res.message || res.errors?.[0]?.message || 'An error occurred during submission. Please try again.');
+              }
+            } catch (err) {
+              console.error(err);
+              uploadProgress.style.display = 'none';
+              showError('Server responded with an invalid format. Please check connection and try again.');
+            }
+          }
+        };
+
+        xhr.onerror = () => {
+          isSubmitting = false;
+          submitBtn.disabled = false;
+          prevBtn.disabled = false;
+          submitBtn.style.opacity = '1';
+          submitBtn.textContent = 'Submit Application';
+          uploadProgress.style.display = 'none';
+          showError('Failed to establish connection to the server. Please verify backend is running on port 5001.');
+        };
+
+        xhr.send(formData);
+      });
+    }
+
+    // Subtle fade-in on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.feature-card, .service-card, .process-step, .testimonial-card, .faq-item').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease, box-shadow 0.35s cubic-bezier(0.23,1,0.32,1), border-color 0.35s cubic-bezier(0.23,1,0.32,1), background 0.35s cubic-bezier(0.23,1,0.32,1)';
+      observer.observe(el);
+    });
+  </script>
+</body>
+
+</html>

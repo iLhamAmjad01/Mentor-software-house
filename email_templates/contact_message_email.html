@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Contact inquiry | MentorTech</title>
+  <style>
+    /* Google Fonts fallback triggers */
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@700;900&family=Space+Mono:wght@700&display=swap');
+    
+    @media only screen and (max-width: 600px) {
+      .email-container {
+        width: 100% !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+      }
+      .card-padding {
+        padding: 20px !important;
+      }
+      .logo-text {
+        font-size: 20px !important;
+      }
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0; width: 100% !important; background-color: #faf8f4; font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #2c3e40; -webkit-text-size-adjust: none; -ms-text-size-adjust: none;">
+  <!-- Main wrapper block to ensure centering and background -->
+  <table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#faf8f4" style="background-color: #faf8f4;">
+    <tr>
+      <td align="center" style="padding: 20px 0 40px 0;">
+        
+        <!-- Main Email container -->
+        <table class="email-container" border="0" cellpadding="0" cellspacing="0" width="600" style="width: 600px; max-width: 600px; border-collapse: collapse; border-spacing: 0;">
+          
+          <!-- HEADER: Logo and Brand identity -->
+          <tr>
+            <td align="center" bgcolor="#faf8f4" style="padding: 30px 24px; border-bottom: 1px solid rgba(96, 145, 149, 0.15);">
+              <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                  <td align="center">
+                    <!-- Wordmark matching site logo -->
+                    <span class="logo-text" style="font-family: 'Playfair Display', Georgia, serif; font-size: 24px; font-weight: 700; color: #3e6568; letter-spacing: 0.5px; text-decoration: none;">
+                      Mentor<span style="color: #609195; font-weight: 900;">Tech</span>
+                    </span>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          
+          <!-- BODY: Main content card with rounded corners and soft shadow -->
+          <tr>
+            <td style="padding: 30px 10px 0 10px;">
+              <table class="card-padding" border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff" style="background-color: #ffffff; border-radius: 24px; border: 1px solid rgba(96, 145, 149, 0.12); box-shadow: 0 12px 32px rgba(96, 145, 149, 0.08); padding: 40px 35px;">
+                
+                <!-- Eyebrow with line -->
+                <tr>
+                  <td align="left" style="padding-bottom: 8px;">
+                    <table border="0" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td width="20" height="2" bgcolor="#609195" style="background-color: #609195; line-height: 1px; font-size: 1px;">&nbsp;</td>
+                        <td style="font-family: 'Space Mono', 'Courier New', monospace; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #609195; padding-left: 8px;">
+                          Contact Inquiry
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                
+                <!-- Main Heading -->
+                <tr>
+                  <td align="left" style="font-family: 'Playfair Display', Georgia, serif; font-size: 28px; font-weight: 700; color: #1a2e30; line-height: 1.25; padding-bottom: 25px;">
+                    New Contact Inquiry
+                  </td>
+                </tr>
+                
+                <!-- Short Description -->
+                <tr>
+                  <td align="left" style="font-family: 'DM Sans', Arial, sans-serif; font-size: 15px; color: #5a7275; line-height: 1.6; padding-bottom: 30px;">
+                    A visitor has submitted a message via the general contact form. Details are provided below:
+                  </td>
+                </tr>
+                
+                <!-- Inquiry Details Table -->
+                <tr>
+                  <td style="padding-bottom: 30px;">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: separate; border-spacing: 0; background-color: #f0f8f9; border-radius: 16px; border: 1px solid rgba(96, 145, 149, 0.1);">
+                      
+                      <!-- Row: Name -->
+                      <tr>
+                        <td width="30%" valign="top" style="padding: 18px 0 18px 20px; font-family: 'Space Mono', 'Courier New', monospace; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #3e6568; border-bottom: 1px solid rgba(96, 145, 149, 0.15);">
+                          Full Name
+                        </td>
+                        <td width="70%" valign="top" style="padding: 16px 20px 16px 10px; font-family: 'DM Sans', Arial, sans-serif; font-size: 14px; font-weight: 700; color: #2c3e40; border-bottom: 1px solid rgba(96, 145, 149, 0.15);">
+                          {{ name }}
+                        </td>
+                      </tr>
+                      
+                      <!-- Row: Email -->
+                      <tr>
+                        <td width="30%" valign="top" style="padding: 18px 0 18px 20px; font-family: 'Space Mono', 'Courier New', monospace; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #3e6568; border-bottom: 1px solid rgba(96, 145, 149, 0.15);">
+                          Email
+                        </td>
+                        <td width="70%" valign="top" style="padding: 16px 20px 16px 10px; font-family: 'DM Sans', Arial, sans-serif; font-size: 14px; color: #2c3e40; border-bottom: 1px solid rgba(96, 145, 149, 0.15);">
+                          <a href="mailto:{{ email }}" style="color: #609195; text-decoration: none; font-weight: 500;">{{ email }}</a>
+                        </td>
+                      </tr>
+                      
+                      <!-- Row: Message -->
+                      <tr>
+                        <td width="30%" valign="top" style="padding: 18px 0 20px 20px; font-family: 'Space Mono', 'Courier New', monospace; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #3e6568;">
+                          Message
+                        </td>
+                        <td width="70%" valign="top" style="padding: 16px 20px 20px 10px; font-family: 'DM Sans', Arial, sans-serif; font-size: 14px; color: #2c3e40; line-height: 1.6;">
+                          {{ message }}
+                        </td>
+                      </tr>
+                      
+                    </table>
+                  </td>
+                </tr>
+                
+                <!-- CTA Button -->
+                <tr>
+                  <td align="center" style="padding-top: 10px; padding-bottom: 10px;">
+                    <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate;">
+                      <tr>
+                        <td align="center" bgcolor="#609195" style="border-radius: 50px; background-color: #609195; box-shadow: 0 4px 18px rgba(96, 145, 149, 0.3);">
+                          <a href="mailto:{{ email }}" target="_blank" style="display: inline-block; padding: 14px 36px; font-family: 'DM Sans', Arial, sans-serif; font-size: 15px; font-weight: 700; color: #ffffff; text-decoration: none; letter-spacing: 0.5px; border-radius: 50px; border: 1px solid #609195;">
+                            Reply to Sender →
+                          </a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                
+              </table>
+            </td>
+          </tr>
+          
+          <!-- FOOTER: Dark navy/almost-black band with accent elements -->
+          <tr>
+            <td style="padding: 40px 10px 0 10px;">
+              <table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#1a2e30" style="background: linear-gradient(160deg, #2a464a, #1a2e30); background-color: #1a2e30; border-radius: 24px; padding: 35px 30px; text-align: center;">
+                <!-- Tagline -->
+                <tr>
+                  <td style="font-family: 'Playfair Display', Georgia, serif; font-size: 16px; font-style: italic; color: #a8c8cb; padding-bottom: 12px;">
+                    Code. Learn. Grow.
+                  </td>
+                </tr>
+                
+                <!-- Footer Info -->
+                <tr>
+                  <td style="font-family: 'DM Sans', Arial, sans-serif; font-size: 13px; color: #a8c8cb; line-height: 1.6; padding-bottom: 20px;">
+                    This is an automated notification from your website system. Please reply directly to the sender using the button above or contact the IT desk if you suspect spam.
+                  </td>
+                </tr>
+                
+                <!-- Copyright -->
+                <tr>
+                  <td style="font-family: 'Space Mono', 'Courier New', monospace; font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: rgba(168, 200, 203, 0.45);">
+                    &copy; 2025 MentorTech. All rights reserved.
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          
+        </table>
+        
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
