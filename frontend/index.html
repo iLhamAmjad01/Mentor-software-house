@@ -3021,6 +3021,9 @@
         // Send request using XMLHttpRequest to track upload progress
         const xhr = new XMLHttpRequest();
         xhr.open('POST', url, true);
+        
+        // Set 30 second timeout limit
+        xhr.timeout = 30000;
 
         xhr.upload.addEventListener('progress', (e) => {
           if (e.lengthComputable) {
@@ -3028,7 +3031,7 @@
             progressFill.style.width = percent + '%';
             progressPercent.textContent = percent + '%';
             if (percent === 100) {
-              progressStatus.textContent = 'Processing Application & Sending Emails...';
+              progressStatus.textContent = 'Processing Application & Saving details...';
             }
           }
         });
@@ -3087,6 +3090,16 @@
           }
         };
 
+        xhr.ontimeout = () => {
+          isSubmitting = false;
+          submitBtn.disabled = false;
+          prevBtn.disabled = false;
+          submitBtn.style.opacity = '1';
+          submitBtn.textContent = 'Submit Application';
+          uploadProgress.style.display = 'none';
+          showError('Form submission request timed out. Please check your internet connection and try again.');
+        };
+
         xhr.onerror = () => {
           isSubmitting = false;
           submitBtn.disabled = false;
@@ -3094,7 +3107,7 @@
           submitBtn.style.opacity = '1';
           submitBtn.textContent = 'Submit Application';
           uploadProgress.style.display = 'none';
-          showError('Failed to establish connection to the server. Please verify backend is running on port 5001.');
+          showError('Failed to establish connection to the server. Please verify the server is active or check your network connection.');
         };
 
         xhr.send(formData);

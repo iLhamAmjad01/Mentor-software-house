@@ -8,16 +8,26 @@ const { sendAdminNotification, sendApplicantConfirmation } = require('../config/
  * POST /api/internships/apply
  */
 const applyInternship = async (req, res, next) => {
+  console.log(`[Submission] Form received. IP Address: ${req.ip || 'Unknown'}`);
+  if (req.file) {
+    console.log(`[Submission] File uploaded successfully: ${req.file.originalname} -> ${req.file.filename} (${req.file.size} bytes)`);
+  } else {
+    console.log('[Submission] Warning: No file attachment present in request.');
+  }
+
   try {
     // 1. Check for express-validator validation results
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
+      console.log(`[Submission] Validation failed:`, errors.array().map(e => `${e.path}: ${e.msg}`));
       // If validation fails, delete the uploaded file
       if (req.file) {
         fs.unlinkSync(req.file.path);
+        console.log(`[Submission] Cleaned up uploaded file due to validation failure.`);
       }
       return res.status(400).json({
         success: false,
+        message: 'Validation failed',
         errors: errors.array().map(e => ({ field: e.path, message: e.msg })),
       });
     }
@@ -62,6 +72,7 @@ const applyInternship = async (req, res, next) => {
     });
 
     if (duplicate) {
+      console.log(`[Submission] Duplicate application check failed for email: ${email}`);
       // Clean up uploaded resume
       fs.unlinkSync(req.file.path);
       return res.status(400).json({
@@ -106,28 +117,34 @@ const applyInternship = async (req, res, next) => {
     });
 
     // 6. Save application to MongoDB
+    console.log(`[Submission] Saving application for ${fullName} to database...`);
     await application.save();
+    console.log(`[Submission] MongoDB saved successfully. Application ID: ${application._id}`);
 
-    // 7. Dispatch Emails (Admin Notification & Applicant Auto-reply)
-    // Wrap email sending in try-catch so failures here don't crash application submission, 
-    // but still notify admin or applicant if something goes wrong.
-    try {
-      // Send email notifications
-      await sendAdminNotification(application, req.file.path);
-      await sendApplicantConfirmation(application.email, application.fullName);
-    } catch (emailError) {
-      // We log email errors, but don't fail the whole request because candidate data is already securely in MongoDB.
-      console.error('[Nodemailer Error] Failed to send email alerts:', emailError);
-    }
-
-    // 8. Return success response
+    // 7. Return success response immediately so the user doesn't wait
     res.status(201).json({
       success: true,
       message: 'Application submitted successfully! Check your inbox for confirmation.',
       applicationId: application._id,
     });
 
+    // 8. Dispatch Emails in the background (asynchronous & non-blocking)
+    setImmediate(async () => {
+      console.log(`[Email] Background email dispatch initiated for application ID: ${application._id}`);
+      try {
+        await sendAdminNotification(application, req.file.path);
+      } catch (emailError) {
+        // Logs are handled within sendAdminNotification, but we catch here to prevent background promise unhandled exceptions
+      }
+      try {
+        await sendApplicantConfirmation(application.email, application.fullName);
+      } catch (emailError) {
+        // Logs are handled within sendApplicantConfirmation
+      }
+    });
+
   } catch (error) {
+    console.error(`[Submission] Exception in applyInternship: ${error.message}`);
     // Let global error handler delete the file and return 500
     next(error);
   }

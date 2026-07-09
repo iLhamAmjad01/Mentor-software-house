@@ -7,12 +7,15 @@ const { sendContactNotification } = require('../config/nodemailer');
  * POST /api/contact/send
  */
 const sendContactMessage = async (req, res, next) => {
+  console.log(`[Contact] Message submission received. IP: ${req.ip || 'Unknown'}`);
   try {
     // 1. Check for validation results
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
+      console.log(`[Contact] Validation failed:`, errors.array().map(e => `${e.path}: ${e.msg}`));
       return res.status(400).json({
         success: false,
+        message: 'Validation failed',
         errors: errors.array().map(e => ({ field: e.path, message: e.msg })),
       });
     }
@@ -34,22 +37,28 @@ const sendContactMessage = async (req, res, next) => {
     });
 
     // 4. Save to MongoDB
+    console.log(`[Contact] Saving message from ${fullName} to database...`);
     await contactMessage.save();
+    console.log(`[Contact] MongoDB saved successfully. Message ID: ${contactMessage._id}`);
 
-    // 5. Send notification email to HR/Admin
-    try {
-      await sendContactNotification(contactMessage);
-    } catch (emailError) {
-      console.error('[Nodemailer Error] Failed to send contact form email alert:', emailError);
-    }
-
-    // 6. Return success response
+    // 5. Return success response immediately
     res.status(201).json({
       success: true,
       message: 'Your message has been sent successfully! We will get in touch with you soon.',
     });
 
+    // 6. Send notification email to HR/Admin in the background
+    setImmediate(async () => {
+      console.log(`[Email] Background email dispatch initiated for contact message ID: ${contactMessage._id}`);
+      try {
+        await sendContactNotification(contactMessage);
+      } catch (emailError) {
+        // Logs are handled within sendContactNotification
+      }
+    });
+
   } catch (error) {
+    console.error(`[Contact] Exception in sendContactMessage: ${error.message}`);
     next(error);
   }
 };

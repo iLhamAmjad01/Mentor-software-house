@@ -7,19 +7,54 @@ const path = require('path');
 const connectDB = require('./config/db');
 const errorHandler = require('./middlewares/errorHandler');
 const { apiLimiter } = require('./middlewares/rateLimiter');
+const { transporter } = require('./config/nodemailer');
 
 // Import routes
 const internshipRoutes = require('./routes/internshipRoutes');
 const adminRoutes = require('./routes/adminRoutes');
 const contactRoutes = require('./routes/contactRoutes');
 
+// Handle uncaught exceptions and unhandled promise rejections
+process.on('uncaughtException', (err) => {
+  console.error(`>>> [CRITICAL] Uncaught Exception: ${err.message}`);
+  console.error(err.stack);
+});
+
+process.on('unhandledRejection', (reason, promise) => {
+  console.error('>>> [CRITICAL] Unhandled Rejection at:', promise, 'reason:', reason);
+});
+
+// Audit required environment variables
+const requiredEnvVars = ['MONGODB_URI', 'SMTP_USER', 'SMTP_PASS'];
+const missingVars = requiredEnvVars.filter(v => !process.env[v]);
+if (missingVars.length > 0) {
+  console.error(`>>> [ENV WARNING] Missing critical environment variables: ${missingVars.join(', ')}`);
+  console.error('>>> Ensure these environment variables are set in your Render dashboard or local .env file.');
+} else {
+  console.log('>>> [ENV AUDIT] All critical environment variables are loaded.');
+}
+
 // Initialize database
 connectDB().then(() => {
   // Seed admin user
   seedAdmin();
+  
+  // Verify SMTP Transporter
+  console.log('>>> [Nodemailer] Verifying SMTP Connection...');
+  transporter.verify((error, success) => {
+    if (error) {
+      console.error('>>> [Nodemailer] SMTP Transporter Verification FAILED:', error.message);
+      console.error('>>> Please check SMTP_HOST, SMTP_PORT, SMTP_USER, and SMTP_PASS settings.');
+    } else {
+      console.log('>>> [Nodemailer] SMTP Transporter is ready to deliver messages.');
+    }
+  });
 });
 
 const app = express();
+
+// Trust reverse proxy (Render) to correctly resolve rate limits and client IPs
+app.set('trust proxy', 1);
 
 // Security and utility Middlewares
 app.use(helmet({
