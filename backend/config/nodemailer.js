@@ -1,6 +1,19 @@
 const fs = require('fs');
 const path = require('path');
 
+// Helper to mask secret API keys for safe logging
+const maskSecret = (key) => {
+  if (!key) return 'undefined';
+  if (key.length <= 8) return '***';
+  return key.slice(0, 7) + '...' + key.slice(-4);
+};
+
+// Log loaded environment variables safely
+console.log('>>> [Email Service Init] Loading Configuration...');
+console.log('>>> EMAIL_FROM:', process.env.EMAIL_FROM || 'MentorTech <onboarding@resend.dev>');
+console.log('>>> HR_EMAIL:', process.env.HR_EMAIL || 'softwarehousementor@gmail.com');
+console.log('>>> RESEND_API_KEY:', maskSecret(process.env.RESEND_API_KEY));
+
 // Helper to make API requests to Resend using built-in fetch
 const resendEmail = async ({ from, to, subject, html, replyTo, attachments }) => {
   const apiKey = process.env.RESEND_API_KEY;
@@ -35,6 +48,8 @@ const resendEmail = async ({ from, to, subject, html, replyTo, attachments }) =>
   const data = await response.json();
 
   if (!response.ok) {
+    console.error('[Email Service] Resend API rejected request. HTTP Status:', response.status);
+    console.error('[Email Service] Resend Error Payload:', JSON.stringify(data, null, 2));
     throw new Error(data.message || `Resend API Error: ${response.status}`);
   }
 
@@ -48,7 +63,7 @@ const transporter = {
       console.warn('>>> [Resend] Warning: RESEND_API_KEY is not defined.');
       cb(new Error('RESEND_API_KEY is missing from environment variables'), null);
     } else {
-      console.log('>>> [Resend] API key is loaded. Ready to deliver messages.');
+      console.log('>>> [Resend] API key verified successfully. Mail service ready.');
       cb(null, true);
     }
   },
@@ -95,9 +110,12 @@ const sendAdminNotification = async (application, cvPath) => {
           filename: application.resumeOriginalName || 'resume.pdf',
           content: fileBuffer.toString('base64'),
         });
+        console.log(`[Email] CV attachment loaded successfully: ${application.resumeOriginalName} (${fileBuffer.length} bytes encoded)`);
       } catch (err) {
         console.error(`[Email] Failed to attach resume at ${cvPath}:`, err.message);
       }
+    } else {
+      console.warn(`[Email] Warning: CV file not found at path ${cvPath}`);
     }
 
     const fromEmail = process.env.EMAIL_FROM || 'MentorTech <onboarding@resend.dev>';
@@ -121,7 +139,7 @@ const sendAdminNotification = async (application, cvPath) => {
 /**
  * Sends auto-confirmation email to the applicant.
  */
-const sendApplicantConfirmation = async (email, fullName) => {
+const sendApplicantConfirmation = async (email, fullName, applicationId, submissionDate, position) => {
   console.log(`[Email] Resend sending started: Applicant confirmation for ${fullName} to ${email}`);
   
   try {
@@ -136,7 +154,23 @@ const sendApplicantConfirmation = async (email, fullName) => {
 
     const templatePath = path.join(__dirname, '../templates/autoReply.js');
     const getTemplate = require(templatePath);
-    const htmlContent = getTemplate(fullName);
+    
+    // Format submission date nicely for the template
+    let formattedDate;
+    try {
+      formattedDate = new Date(submissionDate).toLocaleString('en-US', {
+        timeZone: 'Asia/Karachi',
+        dateStyle: 'medium',
+        timeStyle: 'short'
+      });
+    } catch (tzErr) {
+      formattedDate = new Date(submissionDate).toLocaleString('en-US', {
+        dateStyle: 'medium',
+        timeStyle: 'short'
+      });
+    }
+
+    const htmlContent = getTemplate(fullName, applicationId, formattedDate, position);
 
     const info = await resendEmail({
       from: fromEmail,

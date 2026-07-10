@@ -1,4 +1,4 @@
-module.exports = (fullName) => {
+module.exports = (fullName, applicationId, submissionDate, position) => {
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +6,7 @@ module.exports = (fullName) => {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Application Received | MentorTech</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@700;900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@700;900&family=Space+Mono:wght@500;700&display=swap');
     
     @media only screen and (max-width: 600px) {
       .email-container { width: 100% !important; padding: 10px !important; }
@@ -71,6 +71,31 @@ module.exports = (fullName) => {
                 <tr>
                   <td align="left" style="font-family: 'DM Sans', sans-serif; font-size: 15px; color: #4a5f62; line-height: 1.7; padding-bottom: 20px;">
                     We have successfully received your internship application and resume. Our HR team will review your application details and uploaded materials carefully.
+                  </td>
+                </tr>
+
+                <!-- Application Summary Table -->
+                <tr>
+                  <td style="padding-bottom: 25px;">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse; border: 1px solid rgba(96, 145, 149, 0.12); border-radius: 12px; overflow: hidden; background-color: #fafdfc;">
+                      <tr>
+                        <td colspan="2" bgcolor="#e8f3f3" style="padding: 10px 15px; font-family: 'Space Mono', monospace; font-size: 11px; font-weight: 700; color: #2c4e51; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid rgba(96, 145, 149, 0.15);">
+                          Application Details
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="35%" style="padding: 10px 15px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 700; color: #5a7275; border-bottom: 1px solid rgba(96, 145, 149, 0.08); background-color: #f7faf9;">Application ID</td>
+                        <td width="65%" style="padding: 10px 15px; font-family: 'Space Mono', monospace; font-size: 12px; font-weight: 700; color: #2c3e40; border-bottom: 1px solid rgba(96, 145, 149, 0.08);">${applicationId}</td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 10px 15px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 700; color: #5a7275; border-bottom: 1px solid rgba(96, 145, 149, 0.08); background-color: #f7faf9;">Position Applied</td>
+                        <td style="padding: 10px 15px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 700; color: #3e6568; border-bottom: 1px solid rgba(96, 145, 149, 0.08);">${position}</td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 10px 15px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 700; color: #5a7275; background-color: #f7faf9;">Submitted On</td>
+                        <td style="padding: 10px 15px; font-family: 'DM Sans', sans-serif; font-size: 13px; color: #2c3e40;">${submissionDate}</td>
+                      </tr>
+                    </table>
                   </td>
                 </tr>
                 

@@ -31,6 +31,7 @@ const applyInternship = async (req, res, next) => {
         errors: errors.array().map(e => ({ field: e.path, message: e.msg })),
       });
     }
+    console.log(`[Submission] Validation completed successfully for applicant: ${req.body.fullName}`);
 
     // 2. Ensure resume file exists
     if (!req.file) {
@@ -132,14 +133,23 @@ const applyInternship = async (req, res, next) => {
     setImmediate(async () => {
       console.log(`[Email] Background email dispatch initiated for application ID: ${application._id}`);
       try {
+        console.log(`[Email] Dispatching HR admin notification for applicant: ${application.fullName}`);
         await sendAdminNotification(application, req.file.path);
       } catch (emailError) {
-        // Logs are handled within sendAdminNotification, but we catch here to prevent background promise unhandled exceptions
+        console.error(`[Email] Background HR admin notification failed: ${emailError.message}`);
       }
       try {
-        await sendApplicantConfirmation(application.email, application.fullName);
+        console.log(`[Email] Dispatching applicant confirmation to: ${application.email}`);
+        await sendApplicantConfirmation(
+          application.email,
+          application.fullName,
+          application._id,
+          application.createdAt,
+          application.position
+        );
+        console.log(`[Email] Background applicant confirmation finished for: ${application.fullName}`);
       } catch (emailError) {
-        // Logs are handled within sendApplicantConfirmation
+        console.error(`[Email] Background applicant confirmation failed: ${emailError.message}`);
       }
     });
 
