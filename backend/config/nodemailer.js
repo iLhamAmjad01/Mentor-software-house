@@ -11,7 +11,17 @@ const transporter = nodemailer.createTransport({
     user: process.env.SMTP_USER,
     pass: process.env.SMTP_PASS,
   },
+  tls: {
+    rejectUnauthorized: false,
+    minVersion: 'TLSv1.2',
+  },
+  connectionTimeout: 10000, // 10 seconds
+  greetingTimeout: 10000,   // 10 seconds
+  socketTimeout: 15000,     // 15 seconds
 });
+
+// Fallback sender email address to ensure headers are valid even if env vars are unset
+const getSenderEmail = () => process.env.SMTP_USER || 'softwarehousementor@gmail.com';
 
 /**
  * Sends a detailed internship application summary to HR.
@@ -23,11 +33,20 @@ const sendAdminNotification = async (application, cvPath) => {
   
   try {
     // Format dates and sizes for display
-    const applicationTime = new Date(application.createdAt).toLocaleString('en-US', {
-      timeZone: 'Asia/Karachi',
-      dateStyle: 'medium',
-      timeStyle: 'short',
-    });
+    let applicationTime;
+    try {
+      applicationTime = new Date(application.createdAt).toLocaleString('en-US', {
+        timeZone: 'Asia/Karachi',
+        dateStyle: 'medium',
+        timeStyle: 'short',
+      });
+    } catch (tzError) {
+      console.warn(`[Email] Timezone formatting failed: ${tzError.message}. Falling back to default locale formatting.`);
+      applicationTime = new Date(application.createdAt).toLocaleString('en-US', {
+        dateStyle: 'medium',
+        timeStyle: 'short',
+      });
+    }
     
     const resumeSizeMB = (application.resumeSize / (1024 * 1024)).toFixed(2);
     
@@ -37,7 +56,7 @@ const sendAdminNotification = async (application, cvPath) => {
     const htmlContent = getTemplate(application, applicationTime, resumeSizeMB);
 
     const mailOptions = {
-      from: `"MentorTech System" <${process.env.SMTP_USER}>`,
+      from: `"MentorTech System" <${getSenderEmail()}>`,
       to: hrEmail,
       subject: `New Internship Application - ${application.fullName}`,
       html: htmlContent,
@@ -70,7 +89,7 @@ const sendApplicantConfirmation = async (email, fullName) => {
     const htmlContent = getTemplate(fullName);
 
     const mailOptions = {
-      from: `"MentorTech HR Team" <${process.env.SMTP_USER}>`,
+      from: `"MentorTech HR Team" <${getSenderEmail()}>`,
       to: email,
       subject: 'Application Received | MentorTech',
       html: htmlContent,
@@ -93,18 +112,27 @@ const sendContactNotification = async (contactMessage) => {
   console.log(`[Email] Email sending started: Contact form notification from ${contactMessage.fullName} to ${hrEmail}`);
   
   try {
-    const formattedTime = new Date(contactMessage.createdAt).toLocaleString('en-US', {
-      timeZone: 'Asia/Karachi',
-      dateStyle: 'medium',
-      timeStyle: 'short',
-    });
+    let formattedTime;
+    try {
+      formattedTime = new Date(contactMessage.createdAt).toLocaleString('en-US', {
+        timeZone: 'Asia/Karachi',
+        dateStyle: 'medium',
+        timeStyle: 'short',
+      });
+    } catch (tzError) {
+      console.warn(`[Email] Timezone formatting failed for contact notification: ${tzError.message}. Falling back to default.`);
+      formattedTime = new Date(contactMessage.createdAt).toLocaleString('en-US', {
+        dateStyle: 'medium',
+        timeStyle: 'short',
+      });
+    }
     
     const templatePath = path.join(__dirname, '../templates/contactNotification.js');
     const getTemplate = require(templatePath);
     const htmlContent = getTemplate(contactMessage, formattedTime);
 
     const mailOptions = {
-      from: `"MentorTech Contact" <${process.env.SMTP_USER}>`,
+      from: `"MentorTech Contact" <${getSenderEmail()}>`,
       to: hrEmail,
       replyTo: contactMessage.email,
       subject: `Contact Form: ${contactMessage.subject}`,
