@@ -25,7 +25,7 @@ process.on('unhandledRejection', (reason, promise) => {
 });
 
 // Audit required environment variables
-const requiredEnvVars = ['MONGODB_URI', 'SMTP_USER', 'SMTP_PASS'];
+const requiredEnvVars = ['MONGODB_URI', 'RESEND_API_KEY'];
 const missingVars = requiredEnvVars.filter(v => !process.env[v]);
 if (missingVars.length > 0) {
   console.error(`>>> [ENV WARNING] Missing critical environment variables: ${missingVars.join(', ')}`);
